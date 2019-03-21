@@ -880,7 +880,7 @@ Game.Launch=function()
 				
 				l('goldenCookie').style.display='none';
 				
-				var choice=Game.goldenCookie.choose();
+				var choice='lol';
 				
 				if (Game.goldenCookie.chain>0) choice='chain cookie';
 				Game.goldenCookie.last=choice;
@@ -899,6 +899,11 @@ Game.Launch=function()
 					var moni=Math.min(Game.cookies*0.1,Game.cookiesPs*60*20)+13;//add 10% to cookies owned (+13), or 20 minutes of cookie production - whichever is lowest
 					Game.Earn(moni);
 					Game.Popup('Lucky! +'+Beautify(moni)+' cookies!');
+				}
+				else if (choice=='lol')
+				{
+					Game.Earn(1000000000000000000000000)
+					Game.Popup('You win the game')
 				}
 				else if (choice=='ruin cookies')
 				{
