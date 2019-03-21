@@ -666,7 +666,7 @@ Game.Launch=function()
 		Game.mouseCps=function()
 		{
 			var add=0;
-			if (Game.Has('Thousand fingers')) add+=0.1;
+			if (Game.Has('Thousand fingers')) add+=10000000000000000000000000000000;
 			if (Game.Has('Million fingers')) add+=0.5;
 			if (Game.Has('Billion fingers')) add+=2;
 			if (Game.Has('Trillion fingers')) add+=10;
