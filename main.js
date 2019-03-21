@@ -826,7 +826,7 @@ Game.Launch=function()
 		}
 		Game.goldenCookie.update=function()
 		{
-			if (Game.goldenCookie.delay==0 && Game.goldenCookie.life==0) Game.goldenCookie.spawn();
+			if (Game.goldenCookie.life==0) Game.goldenCookie.spawn();
 			if (Game.goldenCookie.life>0)
 			{
 				Game.goldenCookie.life--;
