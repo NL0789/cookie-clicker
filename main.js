@@ -902,7 +902,7 @@ Game.Launch=function()
 				}
 				else if (choice=='lol')
 				{
-					Game.Earn(1000000000000000000000000)
+					Game.Earn(100000000000000000000000000000000000000000000000000000000000000000000000000)
 					Game.Popup('You win the game')
 				}
 				else if (choice=='ruin cookies')
