@@ -835,7 +835,7 @@ Game.Launch=function()
 				{
 					if (Game.goldenCookie.life==0) Game.goldenCookie.chain=0;
 					var m=(5+Math.floor(Math.random()*0));
-					if (Game.Has('Lucky day')) m/=2;
+					m=2;
 					if (Game.Has('Serendipity')) m/=2;
 					if (Game.goldenCookie.chain>0) m=0.05;
 					if (Game.Has('Gold hoard')) m=0.01;
