@@ -2067,47 +2067,6 @@ Game.Launch=function()
 		}
 		
 		//define objects
-		new Game.Object('Grandma2','grandma|grandmas|baked','A nice grandma to bake more cookies.','grandma','grandmaIcon','grandmaBackground',100,function(){
-			var mult=0;
-			if (Game.Has('Farmer grandmas')) mult++;
-			if (Game.Has('Worker grandmas')) mult++;
-			if (Game.Has('Miner grandmas')) mult++;
-			if (Game.Has('Cosmic grandmas')) mult++;
-			if (Game.Has('Transmuted grandmas')) mult++;
-			if (Game.Has('Altered grandmas')) mult++;
-			if (Game.Has('Grandmas\' grandmas')) mult++;
-			if (Game.Has('Antigrandmas')) mult++;
-			if (Game.Has('Bingo center/Research facility')) mult+=2;
-			if (Game.Has('Ritual rolling pins')) mult++;
-			var add=0;
-			if (Game.Has('One mind')) add+=Game.Objects['Grandma'].amount*0.02;
-			if (Game.Has('Communal brainsweep')) add+=Game.Objects['Grandma'].amount*0.02;
-			if (Game.Has('Elder Pact')) add+=Game.Objects['Portal'].amount*0.05;
-			return Game.ComputeCps(0.5,Game.Has('Forwards from grandma')*0.3+add,Game.Has('Steel-plated rolling pins')+Game.Has('Lubricated dentures')+Game.Has('Prune juice')+mult);
-		},Game.NewDrawFunction(function(){
-			var list=['grandma'];
-			if (Game.Has('Farmer grandmas')) list.push('farmerGrandma');
-			if (Game.Has('Worker grandmas')) list.push('workerGrandma');
-			if (Game.Has('Miner grandmas')) list.push('minerGrandma');
-			if (Game.Has('Cosmic grandmas')) list.push('cosmicGrandma');
-			if (Game.Has('Transmuted grandmas')) list.push('transmutedGrandma');
-			if (Game.Has('Altered grandmas')) list.push('alteredGrandma');
-			if (Game.Has('Grandmas\' grandmas')) list.push('grandmasGrandma');
-			if (Game.Has('Antigrandmas')) list.push('antiGrandma');
-			return choose(list);
-		},8,8,32,3,16),function(){
-			if (this.amount>=1) Game.Unlock(['Forwards from grandma','Steel-plated rolling pins']);if (this.amount>=10) Game.Unlock('Lubricated dentures');if (this.amount>=50) Game.Unlock('Prune juice');
-			if (this.amount>=1) Game.Win('Grandma\'s cookies');if (this.amount>=50) Game.Win('Sloppy kisses');if (this.amount>=100) Game.Win('Retirement home');
-		});
-		Game.Objects['Grandma'].sellFunction=function()
-		{
-			Game.Win('Just wrong');
-			if (this.amount==0)
-			{
-				Game.Lock('Elder Pledge');
-				Game.pledgeT=0;
-			}
-		};
 		
 		new Game.Object('Cursor','cursor|cursors|clicked','Autoclicks once every 10 seconds.','cursor','cursoricon','',15,function(){
 			var add=0;
